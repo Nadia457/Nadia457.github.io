@@ -18,9 +18,6 @@
 		"null","null","null",
          "null","null","null"	];	
 		 
-		 function checkWin(){
-		 if((field[0]=="X" && field[1]=="X" && field[2]=="X")||(field[0]=="O" && field[1]=="O" && field[2]=="O") ){return true;}
-		 }
 		 function move(id){
 		 let elem=document.getElementById("cell"+id);
 		 if(role=="X" && field[id]=="null")
