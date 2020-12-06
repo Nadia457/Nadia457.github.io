@@ -10,6 +10,8 @@
 			.O{
 			 background:url("https://pngimg.com/uploads/circle/circle_PNG44.png" );
 			 background-size:cover;}
+			 #knopka{width:70px;
+			 height:40px;}
         </style>
         <script>
 		let role="X";
@@ -18,6 +20,17 @@
 		"null","null","null",
          "null","null","null"	];	
 		 
+		 function checkWin(){
+		 if((field[0]=="X" && field[1]=="X" && field[2]=="X")||(field[0]=="O" && field[1]=="O" && field[2]=="O") ){return true;}
+		 else if((field[3]=="X" && field[4]=="X" && field[5]=="X")||(field[3]=="O" && field[4]=="O" && field[5]=="O") ){return true;}
+		 else if((field[6]=="X" && field[7]=="X" && field[8]=="X")||(field[6]=="O" && field[7]=="O" && field[8]=="O") ){return true;}
+		 else if((field[0]=="X" && field[3]=="X" && field[6]=="X")||(field[0]=="O" && field[3]=="O" && field[6]=="O") ){return true;}
+		 else if((field[2]=="X" && field[5]=="X" && field[8]=="X")||(field[2]=="O" && field[5]=="O" && field[8]=="O") ){return true;}
+		 else if((field[1]=="X" && field[4]=="X" && field[7]=="X")||(field[1]=="O" && field[4]=="O" && field[7]=="O") ){return true;}
+		 else if((field[0]=="X" && field[4]=="X" && field[8]=="X")||(field[0]=="O" && field[4]=="O" && field[8]=="O") ){return true;}
+		 else if((field[2]=="X" && field[4]=="X" && field[6]=="X")||(field[2]=="O" && field[4]=="O" && field[6]=="O") ){return true;}
+		 }
+		 function reset(){location.reload();}
 		 function move(id){
 		 let elem=document.getElementById("cell"+id);
 		 if(role=="X" && field[id]=="null")
@@ -32,11 +45,14 @@
 		  field[id]="O";
 		  role="X";
 		  }
+		  let check=checkWin()
+		  if(check==true){alert("кінець гри");
+		  location.reload();}
 		  }
 		 </script>
     </head>
     <body>
-        <h1 align="center">Хрестики-нолики</h1>
+       <input type="button" value="reset" onclick="reset()" id="knopka"> <h1 align="center" >Хрестики-нолики</h1>
         <table align="center" cellspacing="0">
             <tr>
                 <td id="cell0"onclick="move(0)"></td>
@@ -56,6 +72,7 @@
                 <td id="cell8"onclick="move(8)"></td>
             </tr>
         </table>
+		
     </body>
 </html>
 
