@@ -6,7 +6,7 @@ body{
 	width: 1040px;
 }
 .card{
-	margin-top: 50px;
+	margin: 50px 20px;
 	border: 1px solid gray;
 	width: 260px;
 	height: 400px;
@@ -55,4 +55,10 @@ body{
 }
 .red{
 	color: red;
+}
+
+#products{
+ display: flex;
+ justify-content: around; 
+ flex-wrap: wrap;
 }
