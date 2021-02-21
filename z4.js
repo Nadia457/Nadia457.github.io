@@ -125,7 +125,7 @@ const users_table=document.getElementById('users_table');
 let users_html=``;
 
 for( i=0; i < users.length;i++){
-     
+     if(users[i].confirmed==true){
 	 let image=`male.svg`;
 	 if(users[i].gender=='female'){image=`female.svg`}
 	 

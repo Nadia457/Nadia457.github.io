@@ -125,9 +125,10 @@ const users_table=document.getElementById('users_table');
 let users_html=``;
 
 for( i=0; i < users.length;i++){
-     
-	 let image=`male.svg`;
-	 if(users[i].gender=='female'){image=`female.svg`}
+     if(users[i].gender=='male'){
+	
+	 image=`male.svg`;
+	 }
 	 
 	 let box=``;
 	 if(users[i].confirmed==true){box=`checked`}
@@ -139,11 +140,11 @@ for( i=0; i < users.length;i++){
 				
 				<td>${users[i].name} ${users[i].lastname}</td>
 				
-				<td class="centered"> <img src=${image} class="icon icon_male"> </td>
+				<td class="centered"> <img src=${image} class="icon"> </td>
 				
 				<td>${users[i].email}</td>
 				
-				<td class="centered"> <input type="checkbox" ${box}></td>
+				<td class="centered"> <input type="checkbox" ${box}> </td>
 			</tr>
 	 `
 }

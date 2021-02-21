@@ -131,8 +131,16 @@ for( i=0; i < users.length;i++){
 	 
 	 let box=``;
 	 if(users[i].confirmed==true){box=`checked`}
-	 
+	 if(users[i].email.includes('yahoo.com')
+
+
+
+}
 	 users_html+=
+
+
+
+
 	 `
 	 <tr>
 				<td>${i+1}</td>
