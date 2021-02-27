@@ -1,17 +1,21 @@
 
+const user = {
+	name: "Олег",
+	lastName: "Іванов",
+	age: 24,
+	email: "oleg24@gmail.com",
+	city: "Львів" 
+}
 function showUser(){
 	const user_data=document.getElementById('user_data');
-	
-	user_data.innerHtml=
+	user_data.innerHTML=
 	`
 	<tr>
-	
-	<td>${user.name}</td>
-	<td>${user.lastName}</td>
-	<td>${user.age}</td>
-	<td>${user.email}</td>
-	<td>${user.city}</td>
-	
+		<td>${user.name}</td>
+		<td>${user.lastName}</td>
+		<td>${user.email}</td>
+		<td>${user.age}</td>
+		<td>${user.city}</td>
 	</tr>
 	`
 }
@@ -25,7 +29,7 @@ function changeName(new_name){
 	}	
 }
 function changeLastName(new_last_name){
-	
+
 	user.lastName=new_last_name;
 	showUser();
 }
@@ -60,8 +64,9 @@ function changeUserData(new_name,new_last_name,new_age,new_email,new_city){
 	user.lastName=new_last_name;
 	showUser();
 	if(typeof new_age=='number'){
-	user.age=new_age;
-	showUser();}
+		user.age=new_age;
+		showUser();
+	}
 	else{
 		alert("Невірно вказаний вік.")
 }
